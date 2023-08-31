@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+.wrap {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto;
+}
+.wrap .con_wrap {
+  width: 300px;
+}
+.wrap .imgBox img {
+  width: 100%;
+}
+.wrap .title {
+  font-size: 27px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.wrap .txt {
+  font-size: 15px;
+}
+
+/* 내가 한 거 */
+
+/* .con_wrap {
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto;
+}
+.con {
+  width: 30%;
+}
+.bg {
+  height: 230%;
+} */
