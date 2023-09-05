@@ -138,3 +138,33 @@ https://www.npmjs.com/package/styled-components
 
 - router(라우트) 중요
   ㄴ
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+ex15)
+
+- useForm
+  - 폼 관련 패키지 (모듈)로 유효성 검사 등 다양한 역할을 쉽게 개발할 수 있음
+
+const {register,handleSubmit, formState: {errors, isValid}}, } = useForm();
+
+1. register : input 엘리먼트에 적용, useForm에 등록하는 역할
+   <input {...register("이름", {
+   required : 필수인지 아닌지, ""를 이용하여 에러메세지를 작성할 수 있음
+   minLength : {
+   value : 8 (최소 작성 길이 지정),
+   message : "에러메세지 작성"
+   }
+   })} />
+2. handleSubmit : 폼 이벤트 부분을 담당
+
+3. formState : 폼 상태를 확인함
+
+- errors : 유효성 검사 중 에러 내용을 가져올 수 있음
+- isValid : 유효성 검사가 참인지 거짓인지 boolean으로 반환함
+
+\*spread operator (전개 구문)
+
+- 객체, 배열 등 문법을 전개하여 내부에 있는 내용을 쉽게 가져옴
+- ...배열명
+- ...객체명

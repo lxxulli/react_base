@@ -54,7 +54,7 @@ const Errosmessage = styled.div`
   margin-top: 5px;
 `;
 
-export const Login = () => {
+export const Signup = () => {
   const nav = useNavigate();
 
   console.log(nav);
@@ -64,16 +64,10 @@ export const Login = () => {
     handleSubmit,
     formState: { errors, isValid },
     setError,
-    // 아이디, 비번 오류날 것을 대비
   } = useForm();
 
   const onSubmit = (data) => {
-    // console.log(data.username);
-    // console.log(data.password);
-    // const inputUsername = data.username;
-    // const inputPassword = data.password;
     const { username, password } = data;
-    // user가 input에 입력한 valus값을 비구조화 할당으로 표현
 
     if (username !== userData.username) {
       setError("username", {
@@ -87,23 +81,15 @@ export const Login = () => {
       });
     }
 
-    // 로그인 성공 시 메인페이지로 이동
     nav("/");
-    // 경로를 지정하여 페이지를 이동시킬 수 있음
   };
-
-  // console.log(errors);
-  // console.log(errors && errors.nsername && errors.username.message);
-  // console.log(errors?.username?.message);
-  // 옵셔널체이닝(optional shaining)
-  // 중첩 객체를 에러없이 안전하게 접근할 수 있음
 
   console.log(isValid);
 
   return (
     <Wrap>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Title>LOGIN</Title>
+        <Title>SIGNUP</Title>
         <Input
           {...register("username", {
             required: "아이디는 필수입니다.",
@@ -123,11 +109,15 @@ export const Login = () => {
           placeholder="패스워드"
         />
         <ErrorMessage text={errors?.password?.message} />
+        <Input
+          {...register("name", {
+            required: "이름은 필수입니다.",
+          })}
+          placeholder="이름"
+        />
+        <ErrorMessage text={errors?.name?.message} />
         <Button $isActive={isValid}>로그인</Button>
       </Form>
     </Wrap>
   );
 };
-
-// ... < 스프레드 연산자
-// ?. < 옵셔널 체이닝
